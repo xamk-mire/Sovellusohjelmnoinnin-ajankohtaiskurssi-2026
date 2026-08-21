@@ -1,0 +1,1 @@
+Tämä repo sisältää Sovellusohjelmoinnin ajankohtaiskurssin 2026 toteutuksen materiaaleja sekä tehtävänantoja
