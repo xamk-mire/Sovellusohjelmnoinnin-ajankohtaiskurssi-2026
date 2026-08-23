@@ -159,7 +159,6 @@ Do **Must** tickets first, then **Should** (S5-06, S5-16), then **Stretch** if y
 | [S5-16](#s5-16--dashboard-cta-to-insights)                  | Dashboard CTA to Insights         | 3    | Should   | S        |
 | [S5-S1](#s5-s1--sse-streaming)                              | SSE streaming                     | —    | Stretch  | L        |
 | [S5-S2](#s5-s2--model-picker)                               | Model picker                      | —    | Stretch  | M        |
-| [S5-S3](#s5-s3--optional-ollama-integration-test)           | Optional Ollama integration test  | —    | Stretch  | M        |
 
 ---
 
@@ -1241,60 +1240,6 @@ Add a local model picker whose default still matches docs / `.env.example`.
 ### Commit
 
 When this ticket is done, create a **new Git commit** for it. Do not mix unrelated tickets in the same commit. Put `S5-S2` in the message, for example `S5-S2: short summary`. Never commit `.env` or secrets.
-
----
-
-## S5-S3 — Optional Ollama integration test
-
-| Field          | Value        |
-| -------------- | ------------ |
-| **Type**       | test         |
-| **Week**       | —            |
-| **Priority**   | Stretch      |
-| **Estimate**   | M            |
-| **Depends on** | S5-01, S5-03 |
-
-### New here: skippable live test
-
-An integration test that talks to a **real** Ollama instance is useful—and harmful if it fails CI for classmates without a GPU or pulled model. **Skip cleanly** when Ollama is unreachable.
-
-**Docs & tutorials:**
-
-- [pytest — skip](https://docs.pytest.org/en/stable/how-to/skipping.html) — conditional skip
-- [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.md) — generate/chat smoke call
-
-### Your task
-
-Add an optional live Ollama test that skips when the runtime is down; do not fail CI for missing GPU/model.
-
-### Instructions
-
-1. Call a real Ollama instance from a pytest (or similar) test.
-2. Skip cleanly when unreachable (`pytest.skip`).
-3. Do not mark the job required for classmates without a model.
-
-### Stay in scope
-
-- Broader API/UI harness still belongs in optional [Sprint 6](sprint-06-tickets.md).
-- Rate limits are not this ticket.
-
-### Hints
-
-- Mark the test `pytest.mark.integration` so default `pytest` can exclude it.
-
-### Acceptance criteria
-
-- [ ] Live test calls a real Ollama instance
-- [ ] Unreachable runtime → skip, not fail
-- [ ] Default test / CI path does not require a pulled model
-
-### Suggested paths
-
-`backend/tests/test_ollama_integration.py`
-
-### Commit
-
-When this ticket is done, create a **new Git commit** for it. Do not mix unrelated tickets in the same commit. Put `S5-S3` in the message, for example `S5-S3: short summary`. Never commit `.env` or secrets.
 
 ---
 

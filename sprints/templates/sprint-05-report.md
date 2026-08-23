@@ -211,7 +211,7 @@ Fill this block only if you did the cache stretch (otherwise skip).
 
 ### Stretch (only if you did them)
 
-For each stretch below that you completed: Status, PR / commit, Used AI? Add Demonstration for [S5-S1](../tickets/sprint-05-tickets.md#s5-s1--sse-streaming) (streaming UI), [S5-S2](../tickets/sprint-05-tickets.md#s5-s2--model-picker), and [S5-S3](../tickets/sprint-05-tickets.md#s5-s3--optional-ollama-integration-test) (`pytest` skip or pass). If you already filled S5-11 above, do not duplicate it here.
+For each stretch below that you completed: Status, PR / commit, Used AI? Add Demonstration for [S5-S1](../tickets/sprint-05-tickets.md#s5-s1--sse-streaming) (streaming UI) and [S5-S2](../tickets/sprint-05-tickets.md#s5-s2--model-picker). If you already filled S5-11 above, do not duplicate it here.
 
 #### S5-S1 — SSE streaming (if done)
 
@@ -236,19 +236,6 @@ For each stretch below that you completed: Status, PR / commit, Used AI? Add Dem
   3. **Must show:** Model selection affecting the Insights request.
   4. **Must not show:** Tokens.
   5. **Save as:** `docs/reports/images/sprint-05/s5-s2-model-picker.png`
-  6. **Caption (1–2 sentences):**
-- **Used AI?** Yes / No
-
-#### S5-S3 — Optional Ollama integration test (if done)
-
-- **Status:**
-- **PR / commit:**
-- **Demonstration:**
-  1. **Do this:** Run the documented integration test; show skip (Ollama down) or pass (Ollama up).
-  2. **Capture:** Terminal screenshot of skip or pass.
-  3. **Must show:** Documented skip/pass behavior without requiring graders to have Ollama.
-  4. **Must not show:** Secrets.
-  5. **Save as:** `docs/reports/images/sprint-05/s5-s3-pytest.png`
   6. **Caption (1–2 sentences):**
 - **Used AI?** Yes / No
 

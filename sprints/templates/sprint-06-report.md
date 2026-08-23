@@ -197,7 +197,7 @@ Skip stretch tickets you did not do. Stretch: Status, PR, and Used AI? for each 
 
 ### Stretch (only if you did them)
 
-For each stretch below that you completed: Status, PR / commit, Used AI? Add Demonstration for [S6-S1](../tickets/sprint-06-tickets.md#s6-s1--ci-workflow), [S6-S2](../tickets/sprint-06-tickets.md#s6-s2--playwright-smoke), and [S6-S3](../tickets/sprint-06-tickets.md#s6-s3--security-headers).
+For each stretch below that you completed: Status, PR / commit, Used AI? Add Demonstration for [S6-S1](../tickets/sprint-06-tickets.md#s6-s1--ci-workflow), [S6-S2](../tickets/sprint-06-tickets.md#s6-s2--playwright-smoke), [S6-S3](../tickets/sprint-06-tickets.md#s6-s3--security-headers), and [S6-S4](../tickets/sprint-06-tickets.md#s6-s4--optional-ollama-integration-test) (`pytest` skip or pass).
 
 #### S6-S1 — CI workflow (if done)
 
@@ -235,6 +235,19 @@ For each stretch below that you completed: Status, PR / commit, Used AI? Add Dem
   3. **Must show:** Documented headers present (names visible).
   4. **Must not show:** Cookies with session secrets if avoidable—crop values.
   5. **Save as:** `docs/reports/images/sprint-06/s6-s3-headers.png`
+  6. **Caption (1–2 sentences):**
+- **Used AI?** Yes / No
+
+#### S6-S4 — Optional Ollama integration test (if done)
+
+- **Status:**
+- **PR / commit:**
+- **Demonstration:**
+  1. **Do this:** Run the documented integration test; show skip (Ollama down) or pass (Ollama up).
+  2. **Capture:** Terminal screenshot of skip or pass.
+  3. **Must show:** Documented skip/pass behavior without requiring graders to have Ollama.
+  4. **Must not show:** Tokens.
+  5. **Save as:** `docs/reports/images/sprint-06/s6-s4-pytest.png`
   6. **Caption (1–2 sentences):**
 - **Used AI?** Yes / No
 

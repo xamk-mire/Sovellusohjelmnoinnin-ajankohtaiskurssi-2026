@@ -38,6 +38,7 @@ Priorities below (**Must** / **Should** / **Stretch**) apply *within* Sprint 6 i
 | [S6-S1](#s6-s1--ci-workflow) | CI workflow | — | Stretch | M |
 | [S6-S2](#s6-s2--playwright-smoke) | Playwright smoke | — | Stretch | L |
 | [S6-S3](#s6-s3--security-headers) | Security headers | — | Stretch | S |
+| [S6-S4](#s6-s4--optional-ollama-integration-test) | Optional Ollama integration test | — | Stretch | M |
 
 ---
 
@@ -791,6 +792,60 @@ Add basic security headers middleware (at least `X-Content-Type-Options` and `Re
 ### Commit
 
 When this ticket is done, create a **new Git commit** for it. Do not mix unrelated tickets in the same commit. Put `S6-S3` in the message, for example `S6-S3: short summary`. Never commit `.env` or secrets.
+
+---
+
+## S6-S4 — Optional Ollama integration test
+
+| Field          | Value        |
+| -------------- | ------------ |
+| **Type**       | test         |
+| **Week**       | —            |
+| **Priority**   | Stretch      |
+| **Estimate**   | M            |
+| **Depends on** | S6-01, S6-04, Sprint 5 Ollama (S5-03) |
+
+### New here: skippable live test
+
+An integration test that talks to a **real** Ollama instance is useful—and harmful if it fails CI for classmates without a GPU or pulled model. **Skip cleanly** when Ollama is unreachable. Mocked AI coverage stays in [S6-04](#s6-04--mocked-ai-tests); this ticket is the optional live path only.
+
+**Docs & tutorials:**
+
+- [pytest — skip](https://docs.pytest.org/en/stable/how-to/skipping.html) — conditional skip
+- [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.md) — generate/chat smoke call
+
+### Your task
+
+Add an optional live Ollama test that skips when the runtime is down; do not fail CI for missing GPU/model.
+
+### Instructions
+
+1. Call a real Ollama instance from a pytest (or similar) test.
+2. Skip cleanly when unreachable (`pytest.skip`).
+3. Do not mark the job required for classmates without a model.
+
+### Stay in scope
+
+- Mocked `/ai/insights` tests stay in S6-04; do not require Ollama for the default pytest path.
+- Rate limits are S6-07, not this ticket.
+
+### Hints
+
+- Mark the test `pytest.mark.integration` so default `pytest` can exclude it.
+
+### Acceptance criteria
+
+- [ ] Live test calls a real Ollama instance
+- [ ] Unreachable runtime → skip, not fail
+- [ ] Default test / CI path does not require a pulled model
+
+### Suggested paths
+
+`backend/tests/test_ollama_integration.py`
+
+### Commit
+
+When this ticket is done, create a **new Git commit** for it. Do not mix unrelated tickets in the same commit. Put `S6-S4` in the message, for example `S6-S4: short summary`. Never commit `.env` or secrets.
 
 ---
 
