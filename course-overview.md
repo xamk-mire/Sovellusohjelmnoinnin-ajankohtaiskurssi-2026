@@ -2,8 +2,6 @@
 
 Welcome. This is the **start of the course**: what you are building, which tools you will use, how the sprints work, and how you should work.
 
-A Finnish version intended for publication outside the repository (Learn, course site) is in [kurssikuvaus.md](kurssikuvaus.md).
-
 Keep this page open in the first week. Commands, ports, and troubleshooting live in the root [README.md](../README.md). Week-by-week work lives in the [sprint index](sprints/README.md) and each sprint’s **tickets**. Extra official docs live in [additional learning materials](additional-learning-materials.md).
 
 ---
